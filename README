@@ -1,1 +1,13 @@
 This is a collection of Unix shell scripts for developers.
+
+These scripts should work on all Unix distros and Mac OS X.
+Otherwise, it will be stated on the file if it doesn't.
+
+
+SSH-COPY-ID
+This is for copying your public key to a remote server. Saves you time typing password over and over again.
+
+Usage:
+cd ~/.ssh/ && ssh-copy-id -i id_rsa.pub user@remoteserver
+
+BACKUP SQL FILES

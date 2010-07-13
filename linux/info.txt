@@ -7,3 +7,6 @@ This is for copying your public key to a remote server. Saves you time typing pa
 
 Usage:
 cd ~/.ssh/ && ssh-copy-id -i id_rsa.pub user@remoteserver
+
+BACKUP SQL FILES
+
