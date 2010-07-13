@@ -12,7 +12,7 @@ cd ~/.ssh/ && ssh-copy-id -i id_rsa.pub user@remoteserver
 
 BACKUP SQL FILES
 
-1. copy and modify 
+1. copy and modify linux/backups.sh
 2. ssh to remote server
 3. copy contents of file to ~/scripts/backups.sh and chmod a+x ~/scripts/backups.sh
 4. crontab -e 
