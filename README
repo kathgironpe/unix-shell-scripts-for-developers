@@ -11,3 +11,11 @@ Usage:
 cd ~/.ssh/ && ssh-copy-id -i id_rsa.pub user@remoteserver
 
 BACKUP SQL FILES
+
+1. copy and modify 
+2. ssh to remote server
+3. copy contents of file to ~/scripts/backups.sh and chmod a+x ~/scripts/backups.sh
+4. crontab -e 
+5. Add these if you want to backup database per hour
+0 0 * * *  ~/scripts/backups.sh 
+
