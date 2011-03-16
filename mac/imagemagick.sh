@@ -21,8 +21,8 @@ download http://heanet.dl.sourceforge.net/project/ghostscript/GPL%20Ghostscript/
 download http://voxel.dl.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz
 download ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ImageMagick-6.6.7-0.tar.gz
 
-tar xzvf freetype-2.4.3.tar.gz
-cd freetype-2.4.3
+tar xzvf freetype-*
+cd freetype-*
 ./configure --prefix=/usr/local
 make clean
 make

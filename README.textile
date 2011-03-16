@@ -1,6 +1,6 @@
 p. This is a collection of Unix shell scripts for developers.
 
-p.These scripts should work on all Unix distros and Mac OS X. Otherwise, it will be stated on the file if it doesn't.
+p. These scripts should work on all Unix distros and Mac OS X. Otherwise, it will be stated on the file if it doesn't.
 
 
 h1. SSH-COPY-ID
