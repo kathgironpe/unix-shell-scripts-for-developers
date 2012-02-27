@@ -35,7 +35,7 @@ do
 	
 	scp  ${SQLFILE} ${staging_user}@${staging_server}:~/dir_backups/database  
 	
-	#on staging server, add this cron rule
+	#on staging server, add this cron rule. If you want to keep more than 10 days of data, just change 10. 
 	#0 0 * * * find /home/user/dir_backups/database/*  -type f -mtime +10 -exec rm {} \;
 	
 	
