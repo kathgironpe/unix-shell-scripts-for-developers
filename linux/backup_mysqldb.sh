@@ -31,10 +31,15 @@ do
 	
 	#the file
 	SQLFILE=${cpath}/${sqldbs[$i]}_$suffix.sql.gz
-	mysqldump -c -h $mysqlhost --user ${usernames[$i]} --password=${passwords[$i]} ${sqldbs[$i]} | gzip > $SQLFILE
+ 	
+  if mysqldump -c -h $mysqlhost --user ${usernames[$i]} --password=${passwords[$i]} ${sqldbs[$i]} | gzip > $SQLFILE
+  then
+    scp  ${SQLFILE} ${backup_user}@${backup_server}:~/dir_backups/database  
+  else
+    echo "[!!ERROR!!] Failed to create the file $SQLFILE"
+  fi
 	
-	scp  ${SQLFILE} ${backup_user}@${backup_server}:~/dir_backups/database  
-	
+		
 	#on the server that keeps the database files, add this cron rule. If you want to keep more than 10 days of data, just change 10. 
 	#0 0 * * * find /home/user/dir_backups/database/*  -type f -mtime +10 -exec rm {} \;
 	
