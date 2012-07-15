@@ -16,6 +16,16 @@ h1. BACKUP MYSQL DATABASES
 2. ssh to remote server
 3. copy contents of file to ~/scripts/backups.sh and chmod a+x ~/scripts/backups.sh
 4. crontab -e 
-5. Add these if you want to backup database per hour
+5. Add this if you want to backup database per hour
 0 0 * * *  ~/scripts/backups.sh 
 
+h1. BACKUP POSTGRESQL DATABASES 
+
+1. copy and modify linux/backup_postgresqldb.sh
+2. ssh to remote server
+3. copy contents of file to ~/scripts/backups.sh and chmod a+x ~/scripts/backups.sh
+4. update the .pgpass file on your home directory. This is needed to make sure you can backup the database without entering a password.
+hostname:port:database:username:password
+5. crontab -e 
+6. Add this if you want to backup database per hour
+0 0 * * *  ~/scripts/backups.sh 

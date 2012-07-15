@@ -10,7 +10,7 @@ backup_server=(backup.somewhere.com)
 
 
 opath=$HOME/backups/database/
-mysqlhost=localhost
+postgresqlhost=localhost
  
 suffix=$(date +%m-%d-%Y-%H-%M)
 current_month=$(date +%m)
@@ -31,12 +31,16 @@ do
 	
 	#the file
 	SQLFILE=${cpath}/${sqldbs[$i]}_$suffix.sql.gz
-	mysqldump -c -h $mysqlhost --user ${usernames[$i]} --password=${passwords[$i]} ${sqldbs[$i]} | gzip > $SQLFILE
-	
-	scp  ${SQLFILE} ${backup_user}@${backup_server}:~/dir_backups/database  
-	
+
+  if pg_dump -Fp -h $postgresqlhost -U ${usernames[$i]} ${sqldbs[$i]} | gzip > $SQLFILE
+  then 
+    scp  ${SQLFILE} ${backup_user}@${backup_server}:~/backups/database  
+  else
+    echo "[!!ERROR!!] Failed to create the file $SQLFILE"
+  fi
+
 	#on the server that keeps the database files, add this cron rule. If you want to keep more than 10 days of data, just change 10. 
-	#0 0 * * * find /home/user/dir_backups/database/*  -type f -mtime +10 -exec rm {} \;
+	#0 0 * * * find /home/user/backups/database/*  -type f -mtime +10 -exec rm {} \;
 	
 	
 	if [ $? -eq 0 ]
