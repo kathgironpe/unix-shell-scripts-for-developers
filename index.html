@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Unix-shell-scripts-for-developers by bridgeutopia</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Unix-shell-scripts-for-developers</h1>
+        <p>Mac OS X/Unix Shell Scripts for Developers</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/bridgeutopia/unix-shell-scripts-for-developers" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/bridgeutopia/unix-shell-scripts-for-developers/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/bridgeutopia/unix-shell-scripts-for-developers/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>This is a collection of Unix shell scripts for developers.</h1>
+
+<p>These scripts should work on all Unix distros and Mac OS X. Otherwise, it will be stated on the file if it doesn't.</p>
+
+<h2>SSH-COPY-ID</h2>
+
+<p>This is for copying your public key to a remote server. Saves you time typing password over and over again.</p>
+
+<p>Usage:</p>
+
+<p><code>cd ~/.ssh/ &amp;&amp; ssh-copy-id -i id_rsa.pub user@remoteserver</code></p>
+
+<h2>BACKUP MYSQL DATABASES </h2>
+
+<ol>
+<li>copy and modify linux/backup_mysqldb.sh</li>
+<li>ssh to remote server</li>
+<li>copy contents of file to ~/scripts/backups.sh</li>
+<li>give proper write permissions to make script executable.
+<code>chmod a+x ~/scripts/backups.sh</code>
+</li>
+<li>crontab -e </li>
+<li>Add this if you want to backup database per hour: 
+<code>0 0 * * *  ~/scripts/backups.sh</code>
+</li>
+</ol><p>On the server where you store backups, make sure to create the directories (e.g., mkdir -p ~/backups/database).</p>
+
+<h2>BACKUP POSTGRESQL DATABASES </h2>
+
+<ol>
+<li>copy and modify linux/backup_postgresqldb.sh</li>
+<li>ssh to remote server</li>
+<li>copy contents of file to ~/scripts/backups.sh and 
+    chmod a+x ~/scripts/backups.sh</li>
+<li>give proper write permissions to make script executable
+<code>chmod a+x ~/scripts/backups.sh</code>
+</li>
+<li>update the .pgpass file on your home directory. This is needed to make sure you can backup the database without entering a password.
+hostname:port:database:username:password</li>
+<li>crontab -e </li>
+<li>Add this if you want to backup database per hour: 
+<code>0 0 * * *  ~/scripts/backups.sh</code>
+</li>
+</ol>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/bridgeutopia">bridgeutopia</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
