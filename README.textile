@@ -10,9 +10,9 @@ p. This is for copying your public key to a remote server. Saves you time typing
 p. Usage:
 p. cd ~/.ssh/ && ssh-copy-id -i id_rsa.pub user@remoteserver
 
-h1. BACKUP SQL FILES
+h1. BACKUP MYSQL DATABASES 
 
-1. copy and modify linux/backups.sh
+1. copy and modify linux/backup_mysqldb.sh
 2. ssh to remote server
 3. copy contents of file to ~/scripts/backups.sh and chmod a+x ~/scripts/backups.sh
 4. crontab -e 
