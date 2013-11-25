@@ -1,95 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Unix-shell-scripts-for-developers by bridgeutopia</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Unix-shell-scripts-for-developers : Mac OS X/Unix Shell Scripts for Developers" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Unix-shell-scripts-for-developers</title>
   </head>
+
   <body>
 
-      <header>
-        <h1>Unix-shell-scripts-for-developers</h1>
-        <p>Mac OS X/Unix Shell Scripts for Developers</p>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/katgironpe/unix-shell-scripts-for-developers">View on GitHub</a>
 
-      <div id="banner">
-        <span id="logo"></span>
+          <h1 id="project_title">Unix-shell-scripts-for-developers</h1>
+          <h2 id="project_tagline">Mac OS X/Unix Shell Scripts for Developers</h2>
 
-        <a href="https://github.com/bridgeutopia/unix-shell-scripts-for-developers" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/bridgeutopia/unix-shell-scripts-for-developers/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/bridgeutopia/unix-shell-scripts-for-developers/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/katgironpe/unix-shell-scripts-for-developers/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/katgironpe/unix-shell-scripts-for-developers/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h1>This is a collection of Unix shell scripts for developers.</h1>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="a-collection-of-unix-shell-scripts-for-developers" class="anchor" href="#a-collection-of-unix-shell-scripts-for-developers"><span class="octicon octicon-link"></span></a>A collection of Unix shell scripts for developers</h1>
 
-<p>These scripts should work on all Unix distros and Mac OS X. Otherwise, it will be stated on the file if it doesn't.</p>
+<p>Most of these scripts should work on all Unix distros and Mac OS X. It will be stated on the file if it doesn't.</p>
 
-<h2>SSH-COPY-ID</h2>
+<h3>
+<a name="ssh-copy-id" class="anchor" href="#ssh-copy-id"><span class="octicon octicon-link"></span></a>SSH-COPY-ID</h3>
 
 <p>This is for copying your public key to a remote server. Saves you time typing password over and over again.</p>
 
+<p>Update: If you are using homebrew, you do not need to download this. Simply install homebrew and do:</p>
+
+<div class="highlight highlight-bash"><pre>brew install ssh-copy-id
+</pre></div>
+
+<p>I used this at a time when homebrew was not popular. In case there are still helpful scripts which are not ideal as homebrew formulas, I will add them up here.</p>
+
 <p>Usage:</p>
 
-<p><code>cd ~/.ssh/ &amp;&amp; ssh-copy-id -i id_rsa.pub user@remoteserver</code></p>
+<div class="highlight highlight-bash"><pre><span class="nb">cd</span> ~/.ssh/ <span class="o">&amp;&amp;</span> ssh-copy-id -i id_rsa.pub user@remoteserver
+</pre></div>
 
-<h2>BACKUP MYSQL DATABASES </h2>
+<h3>
+<a name="backup-mysql-databases" class="anchor" href="#backup-mysql-databases"><span class="octicon octicon-link"></span></a>BACKUP MYSQL DATABASES</h3>
 
 <ol>
 <li>copy and modify linux/backup_mysqldb.sh</li>
 <li>ssh to remote server</li>
-<li>copy contents of file to ~/scripts/backups.sh</li>
+<li>copy contents of file to <code>~/scripts/backups.sh</code>
+</li>
 <li>give proper write permissions to make script executable.
-<code>chmod a+x ~/scripts/backups.sh</code>
+<code>bash
+chmod a+x ~/scripts/backups.sh
+</code>
 </li>
-<li>crontab -e </li>
-<li>Add this if you want to backup database per hour: 
-<code>0 0 * * *  ~/scripts/backups.sh</code>
+<li>crontab -e</li>
+<li>Add this if you want to backup database per hour:
+<code>bash
+0 0 * * *  ~/scripts/backups.sh
+</code>
 </li>
-</ol><p>On the server where you store backups, make sure to create the directories (e.g., mkdir -p ~/backups/database).</p>
+</ol><p>On the server where you store backups, make sure to create the directories (e.g., <code>mkdir -p ~/backups/database</code>).</p>
 
-<h2>BACKUP POSTGRESQL DATABASES </h2>
+<h3>
+<a name="backup-postgresql-databases" class="anchor" href="#backup-postgresql-databases"><span class="octicon octicon-link"></span></a>BACKUP POSTGRESQL DATABASES</h3>
 
 <ol>
 <li>copy and modify linux/backup_postgresqldb.sh</li>
 <li>ssh to remote server</li>
-<li>copy contents of file to ~/scripts/backups.sh and 
-    chmod a+x ~/scripts/backups.sh</li>
+<li>copy contents of file to <code>~/scripts/backups.sh</code> and
+<code>bash
+chmod a+x ~/scripts/backups.sh
+</code>
+</li>
 <li>give proper write permissions to make script executable
-<code>chmod a+x ~/scripts/backups.sh</code>
+<code>bash
+chmod a+x ~/scripts/backups.sh
+</code>
 </li>
 <li>update the .pgpass file on your home directory. This is needed to make sure you can backup the database without entering a password.
-hostname:port:database:username:password</li>
-<li>crontab -e </li>
-<li>Add this if you want to backup database per hour: 
-<code>0 0 * * *  ~/scripts/backups.sh</code>
+<code>hostname:port:database:username:password</code>
+</li>
+<li>
+<code>bash
+crontab -e
+</code>
+7. Add this if you want to backup database per hour:
+<code>bash
+0 0 * * *  ~/scripts/backups.sh
+</code>
 </li>
 </ol>
       </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/bridgeutopia">bridgeutopia</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Unix-shell-scripts-for-developers maintained by <a href="https://github.com/katgironpe">katgironpe</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+
     
+
   </body>
 </html>
