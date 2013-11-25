@@ -1,6 +1,6 @@
-# A collection of Unix shell scripts for developers.
+# A collection of Unix shell scripts for developers
 
-These scripts should work on all Unix distros and Mac OS X. Otherwise, it will be stated on the file if it doesn't.
+Most of these scripts should work on all Unix distros and Mac OS X. It will be stated on the file if it doesn't.
 
 ### SSH-COPY-ID
 
