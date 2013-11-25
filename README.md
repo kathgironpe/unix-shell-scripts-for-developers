@@ -1,10 +1,8 @@
-This is a collection of Unix shell scripts for developers.
-============================
+# A collection of Unix shell scripts for developers.
 
 These scripts should work on all Unix distros and Mac OS X. Otherwise, it will be stated on the file if it doesn't.
 
-SSH-COPY-ID
------------------------------
+### SSH-COPY-ID
 
 This is for copying your public key to a remote server. Saves you time typing password over and over again.
 
@@ -22,8 +20,7 @@ Usage:
 cd ~/.ssh/ && ssh-copy-id -i id_rsa.pub user@remoteserver
 ```
 
-BACKUP MYSQL DATABASES
------------------------------
+### BACKUP MYSQL DATABASES
 
 1. copy and modify linux/backup_mysqldb.sh
 2. ssh to remote server
@@ -40,8 +37,7 @@ BACKUP MYSQL DATABASES
 
 On the server where you store backups, make sure to create the directories (e.g., `mkdir -p ~/backups/database`).
 
-BACKUP POSTGRESQL DATABASES
------------------------------
+### BACKUP POSTGRESQL DATABASES
 
 1. copy and modify linux/backup_postgresqldb.sh
 2. ssh to remote server
